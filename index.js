@@ -68,10 +68,8 @@ app.post('/login', function(req, res){
 
 app.use('/protected_page', function(req, res, next){
    if (req.session.user) {
-      console.log("Logged in")
       next();     //If session exists, proceed to page
    } else {
-      console.log("Not logged in");
       res.redirect('/login');
    }
 });
